@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Heady E-Commerce App</string>
+    <string name="server_url">https://stark-spire-93433.herokuapp.com/json</string>
+    <string name="allow_permission_message_splash">These permissions are mandatory for application t work. You need to allow them.</string>
+    <string name="invalid_mobile_number">Mobile number or Password can not be empty.</string>
+    <string name="permission_denied">Permission is Denied.</string>
+    <string name="blank_username">User Id can not be blank.</string>
+    <string name="blank_password">Password can not be blank.</string>
+
+
+
+</resources>

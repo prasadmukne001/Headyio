@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="menu_back_black">#333</color>
+    <color name="menu_back_selected">#666</color>
+
+
+    <!-- Material color -->
+    <color name="black_error">#ff616161</color>
+    <color name="green_success">#ff9ccc65</color>
+    <color name="orange">#ffffc107</color>
+
+    <!-- Blue -->
+    <color name="blue">#144A6A</color>
+    <color name="light_blue">#b3e5fc</color>
+
+
+    <!--    <color name="colorPrimary">#144A6A</color>
+    <color name="colorPrimaryDark">#144A6A</color>
+    <color name="colorAccent">#71a9cd</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="app_background">#144A6A</color>
+    <color name="loginEdittxt_textColorHint">#71a9cd</color>-->
+
+    <color name="colorPrimary">#0066A1</color>
+    <color name="colorPrimaryDark">#0066A1</color>
+    <color name="colorAccent">#D81159</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="app_background">#0066A1</color>
+    <color name="loginEdittxt_textColorHint">#71a9cd</color>
+    <color name="card_background">#e4eaec</color>
+
+    <color name="active_tag">#008000</color>
+    <color name="blacklisted_tag">#FF0000</color>
+    <color name="low_balance_tag">#FFBF00</color>
+
+    <color name="car_jeep_van">#534487</color>
+    <color name="lcv">#e67d3c</color>
+    <color name="bus_truck">#339040</color>
+    <color name="upto_3_axle_vehicle">#f8e300</color>
+    <color name="upto_4_to_6_axle">#e21783</color>
+    <color name="hsm_eme">#3c97cb</color>
+    <color name="upto_7_or_more_axle">#636d79</color>
+
+
+</resources>

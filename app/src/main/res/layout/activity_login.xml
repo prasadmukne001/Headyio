@@ -1,0 +1,143 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="model"
+            type="com.worldline.android.headyio.viewmodels.LoginViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="70sp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/heady_logo" />
+
+                <ImageView
+                    android:layout_width="150sp"
+                    android:layout_height="30sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:text="Enter Credentials"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/userIdEditText"
+                    style="@style/loginEdtitTextStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45sp"
+                    android:layout_margin="20sp"
+                    android:layout_marginBottom="15sp"
+                    android:drawableLeft="@drawable/ic_login_user"
+                    android:hint="Enter Username"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:text="@={model.login.email}"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp"
+                    app:error="@{model.login.emailError}"
+                    app:onFocus="@{model.getEmailOnFocusChangeListener()}" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_margin="20sp"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/passwordEditText"
+                        style="@style/loginEdtitTextStyle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45sp"
+                        android:layout_weight="90"
+                        android:drawableLeft="@drawable/ic_login_password"
+                        android:hint="Enter Password"
+                        android:imeOptions="actionGo"
+                        android:inputType="textPassword"
+                        android:text="@={model.login.password}"
+                        android:textCursorDrawable="@null"
+                        android:textSize="15sp"
+                        app:error="@{model.login.passwordError}"
+                        app:onFocus="@{model.getPasswordOnFocusChangeListener()}" />
+
+                    <ImageView
+                        android:id="@+id/showPasswordImageView"
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:layout_alignBottom="@+id/passwordEditText"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:onClick="@{() -> model.onPasswordClick(passwordEditText,showPasswordImageView)}"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_visibility_on" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/rememberMeCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:text="Remember Me"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    app:buttonTint="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/loginButton"
+                    style="@style/loginBtnStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:background="@drawable/loginbtn_background"
+                    android:enabled="@{model.login.valid}"
+                    android:onClick="@{() -> model.onButtonClick(userIdEditText,passwordEditText)}"
+                    android:text="Log in" />
+
+                <Button
+                    android:id="@+id/registerUserButton"
+                    style="@style/loginBtnStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign up"
+                    android:textColor="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/forgotPasswordButton"
+                    style="@style/loginBtnStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

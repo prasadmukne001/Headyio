@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_call_white_48dp"
+            android:title="Help Desk" />
+        <!--<item
+            android:id="@+id/account_summary_menu"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Account Summary" />
+        <item
+            android:id="@+id/view_unbilled_transaction_menu"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="View Unbilled Transactions" />
+        <item
+            android:id="@+id/statement_details_menu"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Statement details" />-->
+        <item
+            android:id="@+id/about_fast_tag_menu"
+            android:icon="@drawable/ic_question_answer_white_48dp"
+            android:title="FAQs" />
+        <!--<item-->
+        <!--android:id="@+id/request_for_new_pin_menu"-->
+        <!--android:icon="@drawable/ic_menu_share"-->
+        <!--android:title="Request for New Pin" />-->
+     <!--   <item
+            android:id="@+id/international_transaction_limit_menu"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="International Transaction Limit" />-->
+        <item
+            android:id="@+id/contact_us_menu"
+            android:icon="@drawable/ic_info_white_48dp"
+            android:title="About" />
+        <item
+            android:id="@+id/appGuideMenu"
+            android:icon="@drawable/ic_info_white_48dp"
+            android:title="App Guide" />
+
+        <item
+            android:id="@+id/logoutMenu"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+       <!-- <item
+            android:id="@+id/request_for_duplicate_statement_menu"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Request for Duplicate Statement" />
+        <item
+            android:id="@+id/request_for_card_replacement_menu"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Request for Card Replacement" />-->
+        <!--  <item
+              android:id="@+id/online_credit_card_payment_menu"
+              android:icon="@drawable/ic_menu_slideshow"
+              android:title="Online Credit Card Payments" />
+          <item
+              android:id="@+id/rewards_menu"
+              android:icon="@drawable/ic_home_black_24dp"
+              android:title="Rewards" />-->
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+           <!-- <item
+                android:id="@+id/change_password_menu"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/change_pin_menu"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Create/Change PIN" />-->
+            <item
+                android:id="@+id/changePasswordMenu"
+                android:icon="@drawable/ic_lock_white_48dp"
+                android:title="Change Password" />
+
+          <!--  <item
+                android:id="@+id/changeMpanMenu"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Change MPAN" />-->
+        </menu>
+    </item>
+
+</menu>

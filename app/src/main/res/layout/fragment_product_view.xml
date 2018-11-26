@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".modules.view_products.ProductViewFragment">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:layout_margin="10sp"
+        android:background="@drawable/image_not_available" />
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:layout_marginLeft="20sp"
+        android:text="N/A"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/dateAddedTextView"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:layout_marginLeft="20sp"
+        android:text="N/A"
+        android:textSize="20sp" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:layout_marginLeft="20sp"
+        android:text="Please select product variant below"
+        android:textSize="20sp" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:focusable="false"
+        android:horizontalSpacing="8dp"
+        android:numColumns="4"
+        android:verticalSpacing="8dp" />
+
+    <TextView
+        android:id="@+id/productCostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginLeft="20sp"
+        android:text="Product Cost"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/taxTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginLeft="20sp"
+        android:text="+ Tax (Tax type)"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/totalCostTextView"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginLeft="20sp"
+        android:text="Total Cost"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/addToCartButton"
+        style="@style/loginBtnStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:background="@drawable/loginbtn_background"
+        android:text="Add to Cart" />
+</LinearLayout>

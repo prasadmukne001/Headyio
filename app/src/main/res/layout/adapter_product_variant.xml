@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/android_custom_gridview_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10sp"
+    android:background="@drawable/gridchildborder"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Color"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/colorTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Color"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Size"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/sizeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Size"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Price"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Price"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
