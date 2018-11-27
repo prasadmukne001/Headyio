@@ -91,7 +91,7 @@ public class ProductViewFragment extends Fragment
 		Button addToCartButton = (Button) view.findViewById(R.id.addToCartButton);
 
 		productNameTextView.setText(product.getName());
-		dateAddedTextView.setText("Date Added:-"+product.getDate_added().substring(0,10));
+		dateAddedTextView.setText("Added on:-"+product.getDate_added().substring(0,10));
 		productCostTextView.setText("Product Cost = Select Product Variant First");
 		taxTextView.setText("Tax = "+product.getTax().getValue()+"("+product.getTax().getName()+")");
 		float cost= selectedProductCost+((selectedProductCost*product.getTax().getValue())/100);

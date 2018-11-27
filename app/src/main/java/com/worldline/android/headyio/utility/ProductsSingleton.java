@@ -22,10 +22,24 @@ public class ProductsSingleton
 	private LinkedList<Integer> mostOrderedViewsList;
 	private LinkedList<Integer> mostSharedViewsList;
 
+
+
+	private String responseString;
+
 	private HashMap<String, Category> categoriesList;
 	private ProductsSingleton()
 	{
 
+	}
+
+	public String getResponseString()
+	{
+		return responseString;
+	}
+
+	public void setResponseString(String responseString)
+	{
+		this.responseString = responseString;
 	}
 
 	public static ProductsSingleton getInstance()

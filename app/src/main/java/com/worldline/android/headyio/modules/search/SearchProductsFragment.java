@@ -86,10 +86,15 @@ public class SearchProductsFragment extends Fragment implements TabLayout.OnTabS
 
 	private String getDataFromDB()
 	{
+		String str=null;
 		Cursor cursor= SQLiteDatabaseManager.getInstance(getActivity()).search("Select * from "+SQLiteDatabaseManager.RESPONSE_TABLE);
-		cursor.moveToFirst();
-		String str=cursor.getString(cursor.getColumnIndex(SQLiteDatabaseManager.RESPONSE));
-		cursor.close();
+		if(cursor.getCount()>0)
+		{
+			cursor.moveToFirst();
+			str=cursor.getString(cursor.getColumnIndex(SQLiteDatabaseManager.RESPONSE));
+			cursor.close();
+		}
+
 		return str;
 	}
 

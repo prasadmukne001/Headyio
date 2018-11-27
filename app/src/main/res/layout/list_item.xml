@@ -8,7 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="20sp"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
@@ -16,10 +16,10 @@
         android:paddingBottom="10dp" />
 
 
-    <LinearLayout
+   <!-- <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="1sp"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:background="@color/upto_7_or_more_axle"></LinearLayout>
+        android:background="@color/cardview_shadow_start_color"></LinearLayout>-->
 </LinearLayout>

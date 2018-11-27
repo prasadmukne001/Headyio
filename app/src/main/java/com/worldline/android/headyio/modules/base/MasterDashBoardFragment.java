@@ -1,5 +1,6 @@
 package com.worldline.android.headyio.modules.base;
 
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +16,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import com.worldline.android.headyio.R;
 import com.worldline.android.headyio.application.MyApplication;
+import com.worldline.android.headyio.commons.database.SQLiteDatabaseManager;
+import com.worldline.android.headyio.commons.network.VolleyConnectionRequest;
 import com.worldline.android.headyio.commons.view.BottomNavigationViewHelper;
 import com.worldline.android.headyio.commons.view.CustomGridView;
 import com.worldline.android.headyio.commons.view.ProgressBarHandler;
@@ -46,7 +49,7 @@ public class MasterDashBoardFragment extends Fragment
 	{
 
 		View view = inflater.inflate(R.layout.fragment_master_dash_board, container, false);
-		ButterKnife.inject(this,view);
+		ButterKnife.inject(this, view);
 		initialiseUI(view);
 
 		setGridViewAdapterAndListener();
@@ -58,32 +61,35 @@ public class MasterDashBoardFragment extends Fragment
 
 	private void getDataFromServer()
 	{
-		(new AsyncTask<Void, Void, Void>()
+		if (VolleyConnectionRequest.isNetworkAvailable(getActivity()))
 		{
-			ProgressBarHandler progressBarHandler;
-
-			@Override
-			protected void onPreExecute()
+			(new AsyncTask<Void, Void, Void>()
 			{
-				super.onPreExecute();
-				progressBarHandler = new ProgressBarHandler(getActivity());
-				progressBarHandler.show();
-			}
+				@Override
+				protected void onPreExecute()
+				{
+					super.onPreExecute();
 
-			@Override
-			protected Void doInBackground(Void... voids)
-			{
-				MyApplication.getDataFromServer();
-				return null;
-			}
+				}
 
-			@Override
-			protected void onPostExecute(Void aVoid)
-			{
-				super.onPostExecute(aVoid);
-				progressBarHandler.hide();
-			}
-		}).execute();
+				@Override
+				protected Void doInBackground(Void... voids)
+				{
+					MyApplication.getDataFromServer();
+					return null;
+				}
+
+				@Override
+				protected void onPostExecute(Void aVoid)
+				{
+					super.onPostExecute(aVoid);
+				}
+			}).execute();
+		}
+		else
+		{
+			Toasty.warning(getActivity(), "No Internet Available").show();
+		}
 	}
 
 
@@ -92,7 +98,6 @@ public class MasterDashBoardFragment extends Fragment
 		usernameTextView.setText("Welcome User, " + getActivity().getIntent().getStringExtra(HeadyIOConstants.MOBILE_NUMBER));
 		BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
 	}
-
 
 
 	private void setGridViewAdapterAndListener()
@@ -109,12 +114,20 @@ public class MasterDashBoardFragment extends Fragment
 				String TAG = "";
 				if (position == 0)
 				{
-					TAG = "SearchProductsFragment";
-					fragment = getFragmentManager().findFragmentByTag(TAG);
-					if (null == fragment)
+					if (checkDataFromDB())
 					{
-						fragment = new SearchProductsFragment();
+						TAG = "SearchProductsFragment";
+						fragment = getFragmentManager().findFragmentByTag(TAG);
+						if (null == fragment)
+						{
+							fragment = new SearchProductsFragment();
+						}
 					}
+					else
+					{
+						Toasty.warning(getActivity(), "No Data Available to Show").show();
+					}
+
 				}
 				else if (position == 4)
 				{
@@ -162,6 +175,23 @@ public class MasterDashBoardFragment extends Fragment
 
 
 		});
+	}
+
+	private boolean checkDataFromDB()
+	{
+		String str = null;
+		Cursor cursor = SQLiteDatabaseManager.getInstance(getActivity()).search("Select * from " + SQLiteDatabaseManager.RESPONSE_TABLE);
+		if (cursor.getCount() > 0)
+		{
+			cursor.moveToFirst();
+			str = cursor.getString(cursor.getColumnIndex(SQLiteDatabaseManager.RESPONSE));
+			cursor.close();
+			ProductsSingleton.getInstance().setResponseString(str);
+			return true;
+
+		}
+
+		return false;
 	}
 
 }

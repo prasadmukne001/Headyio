@@ -18,6 +18,8 @@ import com.worldline.android.headyio.R;
 import com.worldline.android.headyio.commons.database.SQLiteDatabaseManager;
 import com.worldline.android.headyio.commons.network.ResponseHandler;
 import com.worldline.android.headyio.commons.network.VolleyConnectionRequest;
+import com.worldline.android.headyio.utility.ProductsSingleton;
+import es.dmoral.toasty.Toasty;
 import java.util.Calendar;
 import java.util.HashMap;
 import org.json.JSONObject;
@@ -62,8 +64,7 @@ public class MyApplication extends MultiDexApplication
 	{
 		try
 		{
-			if (VolleyConnectionRequest.isNetworkAvailable(myApplication))
-			{
+
 
 				final VolleyConnectionRequest volleyConnectionRequest = new VolleyConnectionRequest(myApplication, myApplication.getResources().getString(R.string.server_url), Method.GET, 0,null, false, new HashMap<String, String>(), new HashMap<String, String>(), Priority.HIGH, new ResponseHandler()
 				{
@@ -98,7 +99,7 @@ public class MyApplication extends MultiDexApplication
 					}
 				});
 				volleyConnectionRequest.sendRequest();
-			}
+
 		}
 		catch (Exception e)
 		{
